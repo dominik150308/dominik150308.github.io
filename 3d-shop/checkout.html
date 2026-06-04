@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | info3dSosus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="./index.html" class="logo">
+      <img src="logo.svg" alt="info3dSosus Logo" class="logo-image" />
+      <span>info3dSosus</span>
+    </a>
+    <nav>
+      <a href="./index.html">Start</a>
+      <a href="./produkte.html">Produkte</a>
+      <a href="./about.html">Über uns</a>
+      <a href="./kontakt.html">Kontakt</a>
+      <a href="./warenkorb.html" class="cart-link">🛒 (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <section class="checkout-section">
+    <h1>Checkout</h1>
+    
+    <div class="checkout-container">
+      <!-- Bestellübersicht -->
+      <div class="checkout-summary">
+        <h2>Bestellübersicht</h2>
+        <div id="checkout-items"></div>
+        <div class="checkout-total">
+          <h3>Gesamtbetrag: €<span id="checkout-total">0.00</span></h3>
+        </div>
+      </div>
+
+      <!-- Checkout Formular -->
+      <form id="checkout-form" class="checkout-form">
+        <h2>Versand- & Zahlungsdaten</h2>
+        
+        <fieldset>
+          <legend>Persönliche Daten</legend>
+          <div class="form-group">
+            <label for="name">Vollständiger Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Versandadresse</legend>
+          <div class="form-group">
+            <label for="address">Straße & Hausnummer *</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="zip">PLZ *</label>
+              <input type="text" id="zip" name="zip" required />
+            </div>
+            <div class="form-group">
+              <label for="city">Stadt *</label>
+              <input type="text" id="city" name="city" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="country">Land *</label>
+            <input type="text" id="country" name="country" value="Österreich" required />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Zahlungsart</legend>
+          <div class="form-group">
+            <label class="radio-label">
+              <input type="radio" name="payment" value="card" checked />
+              Kreditkarte
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="payment" value="bank" />
+              Banküberweisung
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="payment" value="paypal" />
+              PayPal
+            </label>
+          </div>
+        </fieldset>
+
+        <div id="card-details" class="card-details">
+          <fieldset>
+            <legend>Kartendaten</legend>
+            <div class="form-group">
+              <label for="cardname">Karteninhaber *</label>
+              <input type="text" id="cardname" name="cardname" />
+            </div>
+            <div class="form-group">
+              <label for="cardnumber">Kartennummer *</label>
+              <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiry">Ablaufdatum *</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" />
+              </div>
+              <div class="form-group">
+                <label for="cvv">CVV *</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="button-secondary" onclick="window.location.href='./warenkorb.html'">Zurück</button>
+          <button type="submit" class="button">Bestellung abschließen</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">info3dSosus</div>
+        <p>3D-Modelle für Druck, Design und kreative Projekte.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">Start</a>
+        <a href="./produkte.html">Produkte</a>
+        <a href="./about.html">Über uns</a>
+        <a href="./kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-contact">
+        <p><strong>Kontakt</strong></p>
+        <p>kontakt@info3dsosus.de</p>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 info3dSosus. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="support.js"></script>
+  <div class="chat-widget" id="chat-widget">
+    <button class="chat-toggle" id="chat-toggle" aria-label="Support chat öffnen">💬 Support</button>
+    <div class="chat-panel" id="chat-panel" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <strong>Julian</strong>
+          <p>Schneller Support direkt im Shop</p>
+        </div>
+        <button class="chat-close" id="chat-close" aria-label="Chat schließen">✕</button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-message bot">Hi! Wie kann ich dir helfen?</div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Frage eingeben..." aria-label="Supportfrage" />
+        <button class="button" id="chat-send">Senden</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function loadCheckoutData() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const checkoutItems = document.getElementById('checkout-items');
+      let total = 0;
+
+      checkoutItems.innerHTML = '';
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        const div = document.createElement('div');
+        div.className = 'checkout-item';
+        div.innerHTML = `
+          <div class="item-info">
+            <span>${item.name}</span>
+            <span>${item.quantity}x</span>
+          </div>
+          <span class="item-price">€${itemTotal.toFixed(2)}</span>
+        `;
+        checkoutItems.appendChild(div);
+      });
+
+      document.getElementById('checkout-total').textContent = total.toFixed(2);
+    }
+
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      localStorage.setItem('cart', JSON.stringify([]));
+      window.location.href = './thank-you.html';
+    });
+
+    document.querySelectorAll('input[name="payment"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const cardDetails = document.getElementById('card-details');
+        if (this.value === 'card') {
+          cardDetails.style.display = 'block';
+        } else {
+          cardDetails.style.display = 'none';
+        }
+      });
+    });
+
+    loadCheckoutData();
+    updateCartCount();
+  </script>
+</body>
+</html>

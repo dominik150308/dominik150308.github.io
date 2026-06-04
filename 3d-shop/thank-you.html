@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bestellung bestätigt | info3dSosus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="./index.html" class="logo">
+      <img src="logo.svg" alt="info3dSosus Logo" class="logo-image" />
+      <span>info3dSosus</span>
+    </a>
+    <nav>
+      <a href="./index.html">Start</a>
+      <a href="./produkte.html">Produkte</a>
+      <a href="./about.html">Über uns</a>
+      <a href="./kontakt.html">Kontakt</a>
+      <a href="./warenkorb.html" class="cart-link">🛒 (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <section class="thank-you-section">
+    <div class="thank-you-container">
+      <div class="success-icon">✓</div>
+      <h1>Vielen Dank für Ihre Bestellung!</h1>
+      <p class="subtitle">Ihre Bestellung wurde erfolgreich aufgegeben.</p>
+      
+      <div class="thank-you-card">
+        <div class="info-block">
+          <h3>📧 Was passiert jetzt?</h3>
+          <ul class="info-list">
+            <li>Sie erhalten in den nächsten Minuten eine <strong>Bestätigungs-E-Mail</strong> mit Ihren Bestelldetails</li>
+            <li>Wir bearbeiten Ihre Bestellung innerhalb von <strong>24 Stunden</strong></li>
+            <li>Sie erhalten eine weitere E-Mail, wenn Ihr Paket <strong>versandt wurde</strong> (mit Tracking-Link)</li>
+            <li>Lieferzeit: <strong>2-5 Werktage</strong> innerhalb Österreichs</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>📦 Ihre Bestellnummer</h3>
+          <div class="order-number">
+            <span id="order-id">Bestellung #2024-06-04-001</span>
+            <button onclick="copyOrderId()" class="copy-btn">Kopieren</button>
+          </div>
+          <p style="margin-top: 1rem; color: #666; font-size: 0.95rem;">Bitte notieren Sie sich diese Nummer für Ihre Unterlagen.</p>
+        </div>
+
+        <div class="info-block">
+          <h3>💬 Fragen?</h3>
+          <p>Bei Fragen zu Ihrer Bestellung kontaktieren Sie uns gerne:</p>
+          <p style="margin-top: 0.5rem;">
+            📞 <strong>+43 680 5513288</strong><br>
+            ✉️ <strong>info@info3dsosus.at</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <a href="./produkte.html" class="button">Zu den Produkten</a>
+        <a href="./index.html" class="button-secondary">Zur Startseite</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">info3dSosus</div>
+        <p>3D-Modelle für Druck, Design und kreative Projekte.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">Start</a>
+        <a href="./produkte.html">Produkte</a>
+        <a href="./about.html">Über uns</a>
+        <a href="./kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-contact">
+        <p><strong>Kontakt</strong></p>
+        <p>kontakt@info3dsosus.de</p>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 info3dSosus. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="support.js"></script>
+  <div class="chat-widget" id="chat-widget">
+    <button class="chat-toggle" id="chat-toggle" aria-label="Support chat öffnen">💬 Support</button>
+    <div class="chat-panel" id="chat-panel" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <strong>Julian</strong>
+          <p>Schneller Support direkt im Shop</p>
+        </div>
+        <button class="chat-close" id="chat-close" aria-label="Chat schließen">✕</button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-message bot">Hi! Wie kann ich dir helfen?</div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Frage eingeben..." aria-label="Supportfrage" />
+        <button class="button" id="chat-send">Senden</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function generateOrderId() {
+      const date = new Date().toISOString().split('T')[0];
+      const random = Math.floor(Math.random() * 10000);
+      return `Bestellung #${date}-${String(random).padStart(4, '0')}`;
+    }
+
+    function copyOrderId() {
+      const orderId = document.getElementById('order-id').textContent;
+      navigator.clipboard.writeText(orderId);
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = '✓ Kopiert!';
+      setTimeout(() => {
+        btn.textContent = 'Kopieren';
+      }, 2000);
+    }
+
+    document.getElementById('order-id').textContent = generateOrderId();
+    updateCartCount();
+  </script>
+</body>
+</html>

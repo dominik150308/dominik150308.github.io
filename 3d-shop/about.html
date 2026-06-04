@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns | info3dSosus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="./index.html" class="logo">
+      <img src="logo.svg" alt="info3dSosus Logo" class="logo-image" />
+      <span>info3dSosus</span>
+    </a>
+    <nav>
+      <a href="./index.html">Start</a>
+      <a href="./produkte.html">Produkte</a>
+      <a href="./about.html">Über uns</a>
+      <a href="./kontakt.html">Kontakt</a>
+      <a href="./warenkorb.html" class="cart-link">🛒 (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <div class="about-card">
+      <h1>Über info3dSosus</h1>
+      
+      <h2>Wer wir sind</h2>
+      <p>info3dSosus ist ein spezialisierter Anbieter für hochwertige 3D-Modelle und digitale Assets. Wir bieten professionelle Modelle zu fairen Preisen für Designer, Ingenieure, Maker und Hobbyisten.</p>
+      
+      <h2>Was wir anbieten</h2>
+      <ul>
+        <li>3D-Modelle für CAD und Visualisierung</li>
+        <li>Print-ready Dateien für 3D-Drucker</li>
+        <li>Architektur- und Design-Assets</li>
+        <li>Technische und mechanische Modelle</li>
+        <li>Kreative und dekorative Designs</li>
+      </ul>
+      
+      <h2>Unser Anspruch</h2>
+      <p>Qualität zu günstigen Preisen – ohne Kompromisse. Jedes Modell ist sorgfältig ausgewählt und getestet.</p>
+      
+      <h2>Kontaktiere uns</h2>
+      <p>Du hast Fragen? Besuche unsere <a href="./kontakt.html">Kontaktseite</a> oder schreib uns direkt.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">info3dSosus</div>
+        <p>3D-Modelle für Druck, Design und kreative Projekte.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">Start</a>
+        <a href="./produkte.html">Produkte</a>
+        <a href="./about.html">Über uns</a>
+        <a href="./kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-contact">
+        <p><strong>Kontakt</strong></p>
+        <p>kontakt@info3dsosus.de</p>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 info3dSosus. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="support.js"></script>
+  <div class="chat-widget" id="chat-widget">
+    <button class="chat-toggle" id="chat-toggle" aria-label="Support chat öffnen">💬 Support</button>
+    <div class="chat-panel" id="chat-panel" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <strong>Julian</strong>
+          <p>Schneller Support direkt im Shop</p>
+        </div>
+        <button class="chat-close" id="chat-close" aria-label="Chat schließen">✕</button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-message bot">Hi! Wie kann ich dir helfen?</div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Frage eingeben..." aria-label="Supportfrage" />
+        <button class="button" id="chat-send">Senden</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

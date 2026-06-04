@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warenkorb | info3dSosus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="./index.html" class="logo">
+      <img src="logo.svg" alt="info3dSosus Logo" class="logo-image" />
+      <span>info3dSosus</span>
+    </a>
+    <nav>
+      <a href="./index.html">Start</a>
+      <a href="./produkte.html">Produkte</a>
+      <a href="./about.html">Über uns</a>
+      <a href="./kontakt.html">Kontakt</a>
+      <a href="./warenkorb.html" class="cart-link">🛒 (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <section class="cart-section">
+    <h1>Dein Warenkorb</h1>
+    
+    <div id="cart-empty" class="empty-message">
+      <p>Dein Warenkorb ist leer.</p>
+      <a href="./produkte.html" class="button">Zu den Produkten</a>
+    </div>
+    
+    <div id="cart-content" style="display: none;">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Produkt</th>
+            <th>Preis</th>
+            <th>Menge</th>
+            <th>Gesamt</th>
+            <th>Aktion</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+        </tbody>
+      </table>
+      
+      <div class="cart-summary">
+        <h3>Gesamtpreis: €<span id="total-price">0.00</span></h3>
+        <button class="button" onclick="window.location.href='./checkout.html'">Zum Checkout</button>
+        <button class="button-secondary" onclick="clearCart()">Warenkorb leeren</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">info3dSosus</div>
+        <p>3D-Modelle für Druck, Design und kreative Projekte.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">Start</a>
+        <a href="./produkte.html">Produkte</a>
+        <a href="./about.html">Über uns</a>
+        <a href="./kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-contact">
+        <p><strong>Kontakt</strong></p>
+        <p>kontakt@info3dsosus.de</p>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 info3dSosus. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="support.js"></script>
+  <div class="chat-widget" id="chat-widget">
+    <button class="chat-toggle" id="chat-toggle" aria-label="Support chat öffnen">💬 Support</button>
+    <div class="chat-panel" id="chat-panel" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <strong>Julian</strong>
+          <p>Schneller Support direkt im Shop</p>
+        </div>
+        <button class="chat-close" id="chat-close" aria-label="Chat schließen">✕</button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-message bot">Hi! Wie kann ich dir helfen?</div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Frage eingeben..." aria-label="Supportfrage" />
+        <button class="button" id="chat-send">Senden</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function displayCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItems = document.getElementById('cart-items');
+      const cartEmpty = document.getElementById('cart-empty');
+      const cartContent = document.getElementById('cart-content');
+      
+      if (cart.length === 0) {
+        cartContent.style.display = 'none';
+        cartEmpty.style.display = 'block';
+        return;
+      }
+      
+      cartContent.style.display = 'block';
+      cartEmpty.style.display = 'none';
+      cartItems.innerHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        const row = document.createElement('tr');
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>€${item.price.toFixed(2)}</td>
+          <td><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)"></td>
+          <td>€${itemTotal.toFixed(2)}</td>
+          <td><button onclick="removeFromCart(${index})">Entfernen</button></td>
+        `;
+        cartItems.appendChild(row);
+      });
+      
+      document.getElementById('total-price').textContent = total.toFixed(2);
+      updateCartCount();
+    }
+    
+    function updateQuantity(index, newQuantity) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart[index].quantity = parseInt(newQuantity) || 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart();
+    }
+    
+    function removeFromCart(index) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart();
+    }
+    
+    function clearCart() {
+      localStorage.setItem('cart', JSON.stringify([]));
+      displayCart();
+    }
+    
+    function checkout() {
+      alert('Vielen Dank für deine Bestellung! Kontaktiere uns für weitere Details: +43 680 5513288');
+      clearCart();
+    }
+    
+    displayCart();
+  </script>
+</body>
+</html>

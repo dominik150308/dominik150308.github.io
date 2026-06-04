@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produkte | info3dSosus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="./index.html" class="logo">
+      <img src="logo.svg" alt="info3dSosus Logo" class="logo-image" />
+      <span>info3dSosus</span>
+    </a>
+    <nav>
+      <a href="./index.html">Start</a>
+      <a href="./produkte.html">Produkte</a>
+      <a href="./about.html">Über uns</a>
+      <a href="./kontakt.html">Kontakt</a>
+      <a href="./warenkorb.html" class="cart-link">🛒 (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <section class="products-section">
+    <h1>Unsere Produkte</h1>
+    <div class="product-search">
+      <input type="search" id="product-search" placeholder="Produkt suchen…" aria-label="Produkt suchen" />
+    </div>
+    <div class="product-grid">
+      <article class="card">
+        <div class="card-image">3D Architekturmodell</div>
+        <h2>Moderne Villa</h2>
+        <p>Hochdetailliertes Architekturmodell für Präsentationen und Visualisierungen.</p>
+        <div class="price">€49,90</div>
+        <button class="add-to-cart" data-id="1" data-name="Moderne Villa" data-price="49.90">In den Warenkorb</button>
+      </article>
+
+      <article class="card">
+        <div class="card-image">3D Möbel Design</div>
+        <h2>Designer Stuhl</h2>
+        <p>Moderner Designerstuhl, ready-to-print für 3D-Druck.</p>
+        <div class="price">€24,90</div>
+        <button class="add-to-cart" data-id="2" data-name="Designer Stuhl" data-price="24.90">In den Warenkorb</button>
+      </article>
+
+      <article class="card">
+        <div class="card-image">3D Figur</div>
+        <h2>Anime Figur</h2>
+        <p>Detailreiche Sammler-Figur aus Anime/Manga-Universum.</p>
+        <div class="price">€18,50</div>
+        <button class="add-to-cart" data-id="3" data-name="Anime Figur" data-price="18.50">In den Warenkorb</button>
+      </article>
+
+      <article class="card">
+        <div class="card-image">3D Maschinenteil</div>
+        <h2>Turbinen-Modell</h2>
+        <p>Präzisions-Turbinen-CAD-Modell für technische Projekte.</p>
+        <div class="price">€39,90</div>
+        <button class="add-to-cart" data-id="4" data-name="Turbinen-Modell" data-price="39.90">In den Warenkorb</button>
+      </article>
+
+      <article class="card">
+        <div class="card-image">3D Dekorationen</div>
+        <h2>Schädel Deko</h2>
+        <p>Coole Gothic-Dekoration für Cosplay und Sammler.</p>
+        <div class="price">€22,50</div>
+        <button class="add-to-cart" data-id="5" data-name="Schädel Deko" data-price="22.50">In den Warenkorb</button>
+      </article>
+
+      <article class="card">
+        <div class="card-image">3D Schmuck</div>
+        <h2>Fantasy Ring</h2>
+        <p>Zauberer-Schmuck für Fantasy-Fans und Cosplayer.</p>
+        <div class="price">€14,90</div>
+        <button class="add-to-cart" data-id="6" data-name="Fantasy Ring" data-price="14.90">In den Warenkorb</button>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">info3dSosus</div>
+        <p>3D-Modelle für Druck, Design und kreative Projekte.</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">Start</a>
+        <a href="./produkte.html">Produkte</a>
+        <a href="./about.html">Über uns</a>
+        <a href="./kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-contact">
+        <p><strong>Kontakt</strong></p>
+        <p>kontakt@info3dsosus.de</p>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 info3dSosus. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script src="support.js"></script>
+  <div class="chat-widget" id="chat-widget">
+    <button class="chat-toggle" id="chat-toggle" aria-label="Support chat öffnen">💬 Support</button>
+    <div class="chat-panel" id="chat-panel" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <strong>Julian</strong>
+          <p>Schneller Support direkt im Shop</p>
+        </div>
+        <button class="chat-close" id="chat-close" aria-label="Chat schließen">✕</button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-message bot">Hi! Wie kann ich dir helfen?</div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Frage eingeben..." aria-label="Supportfrage" />
+        <button class="button" id="chat-send">Senden</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

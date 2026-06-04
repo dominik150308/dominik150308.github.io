@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-logo">
+  <title id="title-logo">info3dSosus Logo</title>
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a76f"/>
+      <stop offset="100%" stop-color="#a68560"/>
+    </linearGradient>
+  </defs>
+  <rect x="14" y="18" width="72" height="72" rx="18" fill="url(#logoGradient)"/>
+  <path d="M36 44 L54 32 L72 44" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M54 32 L54 68" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M36 44 L36 80 L72 80 L72 44" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="60" cy="60" r="8" fill="#fff"/>
+</svg>
