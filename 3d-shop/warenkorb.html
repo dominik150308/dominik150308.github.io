@@ -34,6 +34,7 @@
         <thead>
           <tr>
             <th>Produkt</th>
+            <th>Farbe</th>
             <th>Preis</th>
             <th>Menge</th>
             <th>Gesamt</th>
@@ -115,9 +116,10 @@
         const row = document.createElement('tr');
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        
+        const swatchStyle = (typeof colorToStyle === 'function') ? colorToStyle(item.color) : '';
         row.innerHTML = `
           <td>${item.name}</td>
+          <td class="cart-color"><span class="cart-color-swatch" style="background: ${swatchStyle};"></span>${item.color || ''}</td>
           <td>€${item.price.toFixed(2)}</td>
           <td><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)"></td>
           <td>€${itemTotal.toFixed(2)}</td>

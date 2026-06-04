@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bestellung bestätigt | info3dSosus</title>
+  <title>Bestellung bestätigt | 3dSosue</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <a href="./index.html" class="logo">
-      <img src="logo.svg" alt="info3dSosus Logo" class="logo-image" />
-      <span>info3dSosus</span>
+      <img src="logo.svg" alt="3dSosue Logo" class="logo-image" />
+      <span>3dSosue</span>
     </a>
     <nav>
       <a href="./index.html">Start</a>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="info-block">
-          <h3>📦 Ihre Bestellnummer</h3>
+          <h3>📦 Ihre Bestellungs-Nr</h3>
           <div class="order-number">
             <span id="order-id">Bestellung #2024-06-04-001</span>
             <button onclick="copyOrderId()" class="copy-btn">Kopieren</button>
@@ -67,7 +67,7 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-brand">
-        <div class="logo">info3dSosus</div>
+        <div class="logo">3dSosue</div>
         <p>3D-Modelle für Druck, Design und kreative Projekte.</p>
       </div>
       <div class="footer-links">
@@ -81,7 +81,7 @@
         <p>kontakt@info3dsosus.de</p>
       </div>
     </div>
-    <p class="footer-note">© 2026 info3dSosus. Alle Rechte vorbehalten.</p>
+    <p class="footer-note">© 2026 3dSosue. Alle Rechte vorbehalten.</p>
   </footer>
 
   <script src="cart.js"></script>
@@ -107,9 +107,9 @@
   </div>
   <script>
     function generateOrderId() {
-      const date = new Date().toISOString().split('T')[0];
-      const random = Math.floor(Math.random() * 10000);
-      return `Bestellung #${date}-${String(random).padStart(4, '0')}`;
+      const nextOrder = parseInt(localStorage.getItem('order-counter') || '8585', 10);
+      localStorage.setItem('order-counter', String(nextOrder + 1));
+      return `Bestellung #${String(nextOrder).padStart(4, '0')}`;
     }
 
     function copyOrderId() {

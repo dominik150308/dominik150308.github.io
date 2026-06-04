@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="titleFlower">
+  <title id="titleFlower">Stilisierte rote Rose</title>
+  <rect width="100%" height="100%" fill="transparent"/>
+  <!-- stem -->
+  <path d="M310 420 C305 360 305 320 300 260" stroke="#2d7a2d" stroke-width="16" stroke-linecap="round" fill="none" />
+  <!-- leaves -->
+  <path d="M300 330 C260 320 240 360 290 360" fill="#2d7a2d" />
+  <path d="M310 360 C350 350 370 390 320 385" fill="#2d7a2d" />
+  <!-- rose petals (stylized) -->
+  <g transform="translate(200,80) scale(1.1)">
+    <ellipse cx="120" cy="120" rx="110" ry="90" fill="#ff5a5a" />
+    <path d="M120 40 C100 70 90 90 100 120 C80 110 60 140 90 160 C110 175 140 165 150 150 C160 135 150 120 160 110 C170 100 200 95 210 120 C220 145 200 170 170 180 C140 190 120 170 120 150 C110 120 140 100 150 90 C160 80 150 60 120 40 Z" fill="#e33" opacity="0.95"/>
+    <path d="M120 80 C120 60 140 50 150 70 C160 90 150 100 140 100 C130 100 120 95 120 80 Z" fill="#ff9b9b" opacity="0.85"/>
+    <circle cx="120" cy="120" r="28" fill="#ff2a2a" />
+  </g>
+</svg>

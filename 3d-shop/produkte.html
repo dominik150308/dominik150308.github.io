@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produkte | info3dSosus</title>
+  <title>Produkte | 3dSosue</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <a href="./index.html" class="logo">
-      <img src="logo.svg" alt="info3dSosus Logo" class="logo-image" />
-      <span>info3dSosus</span>
+      <img src="logo.svg" alt="3dSosue Logo" class="logo-image" />
+      <span>3dSosue</span>
     </a>
     <nav>
       <a href="./index.html">Start</a>
@@ -21,18 +21,140 @@
     </nav>
   </header>
 
-  <section class="products-section">
-    <h1>Unsere Produkte</h1>
-    <div class="product-search">
-      <input type="search" id="product-search" placeholder="Produkt suchen…" aria-label="Produkt suchen" />
+  <section class="shop-hero">
+    <div class="hero-grid shop-hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Einzigartige 3D-Produkte</span>
+        <h1>Handgefertigte Designs aus Österreich</h1>
+        <p>Entdecke stilvolle 3D-Modelle mit klarem Branding, frischen Farben und hochwertigen Produktbildern. Ideal zum Drucken, Dekorieren und Verschenken.</p>
+        <div class="hero-actions">
+          <a href="#product-grid" class="button">Zu den Produkten</a>
+          <a href="./kontakt.html" class="button-secondary">Kontakt aufnehmen</a>
+        </div>
+      </div>
+      <div class="hero-showcase shop-highlight-panel">
+        <div class="feature-item">
+          <h3>Made in Austria</h3>
+          <p>Kundenzufriedenheit steht an erster Stelle. Lokal entwickelt, schnell geliefert.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Fotos statt Standard</h3>
+          <p>Direkte Produktfotos zeigen die echte Form und Materialität der Modelle.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Farbwahl mit Swatch</h3>
+          <p>Wähle deine Wunschfarbe direkt in der Produktkarte mit live Swatch-Visualisierung.</p>
+        </div>
+      </div>
     </div>
-    <div class="product-grid">
+  </section>
+
+<section class="products-section">
+    <h1>Unsere 3D-Druck Produkte</h1>
+
+    <p class="products-subtitle">
+        Handgefertigt in Österreich • Individuell gefertigt • Hochwertiger PLA-Druck
+    </p>
+
+    <div class="product-search">
+        <input type="search" id="product-search" placeholder="🔍 Produkt suchen..." aria-label="Produkt suchen" />
+
+        <label class="sort-label">
+            Sortieren:
+            <select id="sort-price" aria-label="Sortieren nach Preis">
+                <option value="default">Standard</option>
+                <option value="asc">Preis aufsteigend</option>
+                <option value="desc">Preis absteigend</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="product-grid" id="product-grid">
       <article class="card">
-        <div class="card-image">3D Architekturmodell</div>
-        <h2>Moderne Villa</h2>
-        <p>Hochdetailliertes Architekturmodell für Präsentationen und Visualisierungen.</p>
-        <div class="price">€49,90</div>
-        <button class="add-to-cart" data-id="1" data-name="Moderne Villa" data-price="49.90">In den Warenkorb</button>
+        <div class="card-image">
+          <img id="main-product-image-1" src="produkte/flower1_800.jpg" alt="Rote Blume" />
+        </div>
+        <div class="thumbnails" aria-hidden="false">
+          <img class="product-thumb active" src="produkte/flower1_800.jpg" data-large="produkte/flower1_800.jpg" alt="Ansicht 1" />
+          <img class="product-thumb" src="produkte/flower2_800.jpg" data-large="produkte/flower2_800.jpg" alt="Ansicht 2" />
+          <img class="product-thumb" src="produkte/flower3_800.jpg" data-large="produkte/flower3_800.jpg" alt="Ansicht 3" />
+        </div>
+        <h2>Rote Blume</h2>
+        <p>Blume (rot) mit grüner Stange. Länge: ca. 16 cm; Durchmesser: ca. 3.7 cm.</p>
+        <div class="price">€2,99</div>
+        <button class="add-to-cart" data-id="1" data-name="Rote Blume" data-price="2.99">In den Warenkorb</button>
+      </article>
+
+      <article class="card">
+        <div class="card-badge badge-new">NEU</div>
+        <div class="card-image">
+          <img id="main-product-image-7" src="produkte/brillenhalter1_800.jpg" alt="Brillenhalter Nasenform" />
+        </div>
+        <div class="thumbnails" aria-hidden="false">
+          <img class="product-thumb active" src="produkte/brillenhalter1_800.jpg" data-large="produkte/brillenhalter1_800.jpg" alt="Nasenform Ansicht 1" />
+          <img class="product-thumb" src="produkte/brillenhalter2_800.jpg" data-large="produkte/brillenhalter2_800.jpg" alt="Nasenform Ansicht 2" />
+          <img class="product-thumb" src="produkte/brillenhalter3_800.jpg" data-large="produkte/brillenhalter3_800.jpg" alt="Nasenform Ansicht 3" />
+        </div>
+        <h2>Brillenhalter Nasenform</h2>
+        <p>Nasenförmiger Brillenhalter, Höhe 10 cm, Breite 5,5 cm. Stylischer Aufbewahrer für eine Brille auf dem Schreibtisch.</p>
+        <div class="price">€14,90</div>
+        <label class="color-field">Farbe:
+          <div class="color-control">
+            <select class="product-color" aria-label="Farbe wählen">
+              <option value="marmour">marmour</option>
+              <option value="weiß">weiß</option>
+              <option value="schwarz">schwarz</option>
+              <option value="rot">rot</option>
+              <option value="rosa">rosa</option>
+              <option value="hellblau">hellblau</option>
+              <option value="dunkelblau">dunkelblau</option>
+              <option value="meeresblau">meeresblau</option>
+              <option value="magenta">magenta</option>
+              <option value="gold">gold</option>
+              <option value="tuerkis">türkis</option>
+              <option value="braun">braun</option>
+              <option value="holz">holz</option>
+            </select>
+            <span class="color-swatch" aria-hidden="true"></span>
+          </div>
+        </label>
+        <button class="add-to-cart" data-id="7" data-name="Brillenhalter Nasenform" data-price="14.90">In den Warenkorb</button>
+      </article>
+
+      <article class="card">
+        <div class="card-badge badge-hot">BELIEBT</div>
+        <div class="card-image">
+          <img id="main-product-image-8" src="produkte/cube1_800.jpg" alt="Beweiliger Würfer" />
+        </div>
+        <div class="thumbnails" aria-hidden="false">
+          <img class="product-thumb active" src="produkte/cube1_800.jpg" data-large="produkte/cube1_800.jpg" alt="Würfel Ansicht 1" />
+          <img class="product-thumb" src="produkte/cube2_800.jpg" data-large="produkte/cube2_800.jpg" alt="Würfel Ansicht 2" />
+          <img class="product-thumb" src="produkte/cube3_800.jpg" data-large="produkte/cube3_800.jpg" alt="Würfel Ansicht 3" />
+        </div>
+        <h2>Beweiliger Würfer</h2>
+        <p>Stabiler Würfel, 3,5 cm lang und 3,5 cm breit. Ideal als Deko-Objekt und 3D-Druck-Accessoire.</p>
+        <div class="price">€12,90</div>
+        <label class="color-field">Farbe:
+          <div class="color-control">
+            <select class="product-color" aria-label="Farbe wählen">
+              <option value="marmour">marmour</option>
+              <option value="weiß">weiß</option>
+              <option value="schwarz">schwarz</option>
+              <option value="rot">rot</option>
+              <option value="rosa">rosa</option>
+              <option value="hellblau">hellblau</option>
+              <option value="dunkelblau">dunkelblau</option>
+              <option value="meeresblau">meeresblau</option>
+              <option value="magenta">magenta</option>
+              <option value="gold">gold</option>
+              <option value="tuerkis">türkis</option>
+              <option value="braun">braun</option>
+              <option value="holz">holz</option>
+            </select>
+            <span class="color-swatch" aria-hidden="true"></span>
+          </div>
+        </label>
+        <button class="add-to-cart" data-id="8" data-name="Beweiliger Würfer" data-price="12.90">In den Warenkorb</button>
       </article>
 
       <article class="card">
@@ -40,6 +162,26 @@
         <h2>Designer Stuhl</h2>
         <p>Moderner Designerstuhl, ready-to-print für 3D-Druck.</p>
         <div class="price">€24,90</div>
+        <label class="color-field">Farbe:
+          <div class="color-control">
+            <select class="product-color" aria-label="Farbe wählen">
+              <option value="marmour">marmour</option>
+              <option value="weiß">weiß</option>
+              <option value="schwarz">schwarz</option>
+              <option value="rot">rot</option>
+              <option value="rosa">rosa</option>
+              <option value="hellblau">hellblau</option>
+              <option value="dunkelblau">dunkelblau</option>
+              <option value="meeresblau">meeresblau</option>
+              <option value="magenta">magenta</option>
+              <option value="gold">gold</option>
+              <option value="tuerkis">türkis</option>
+              <option value="braun">braun</option>
+              <option value="holz">holz</option>
+            </select>
+            <span class="color-swatch" aria-hidden="true"></span>
+          </div>
+        </label>
         <button class="add-to-cart" data-id="2" data-name="Designer Stuhl" data-price="24.90">In den Warenkorb</button>
       </article>
 
@@ -48,6 +190,26 @@
         <h2>Anime Figur</h2>
         <p>Detailreiche Sammler-Figur aus Anime/Manga-Universum.</p>
         <div class="price">€18,50</div>
+        <label class="color-field">Farbe:
+          <div class="color-control">
+            <select class="product-color" aria-label="Farbe wählen">
+              <option value="marmour">marmour</option>
+              <option value="weiß">weiß</option>
+              <option value="schwarz">schwarz</option>
+              <option value="rot">rot</option>
+              <option value="rosa">rosa</option>
+              <option value="hellblau">hellblau</option>
+              <option value="dunkelblau">dunkelblau</option>
+              <option value="meeresblau">meeresblau</option>
+              <option value="magenta">magenta</option>
+              <option value="gold">gold</option>
+              <option value="tuerkis">türkis</option>
+              <option value="braun">braun</option>
+              <option value="holz">holz</option>
+            </select>
+            <span class="color-swatch" aria-hidden="true"></span>
+          </div>
+        </label>
         <button class="add-to-cart" data-id="3" data-name="Anime Figur" data-price="18.50">In den Warenkorb</button>
       </article>
 
@@ -56,6 +218,26 @@
         <h2>Turbinen-Modell</h2>
         <p>Präzisions-Turbinen-CAD-Modell für technische Projekte.</p>
         <div class="price">€39,90</div>
+        <label class="color-field">Farbe:
+          <div class="color-control">
+            <select class="product-color" aria-label="Farbe wählen">
+              <option value="marmour">marmour</option>
+              <option value="weiß">weiß</option>
+              <option value="schwarz">schwarz</option>
+              <option value="rot">rot</option>
+              <option value="rosa">rosa</option>
+              <option value="hellblau">hellblau</option>
+              <option value="dunkelblau">dunkelblau</option>
+              <option value="meeresblau">meeresblau</option>
+              <option value="magenta">magenta</option>
+              <option value="gold">gold</option>
+              <option value="tuerkis">türkis</option>
+              <option value="braun">braun</option>
+              <option value="holz">holz</option>
+            </select>
+            <span class="color-swatch" aria-hidden="true"></span>
+          </div>
+        </label>
         <button class="add-to-cart" data-id="4" data-name="Turbinen-Modell" data-price="39.90">In den Warenkorb</button>
       </article>
 
@@ -64,6 +246,23 @@
         <h2>Schädel Deko</h2>
         <p>Coole Gothic-Dekoration für Cosplay und Sammler.</p>
         <div class="price">€22,50</div>
+        <label class="color-field">Farbe:
+          <select class="product-color" aria-label="Farbe wählen">
+              <option value="marmour">marmour</option>
+              <option value="weiß">weiß</option>
+              <option value="schwarz">schwarz</option>
+            <option value="rot">rot</option>
+            <option value="rosa">rosa</option>
+            <option value="hellblau">hellblau</option>
+            <option value="dunkelblau">dunkelblau</option>
+            <option value="meeresblau">meeresblau</option>
+            <option value="magenta">magenta</option>
+            <option value="gold">gold</option>
+            <option value="tuerkis">türkis</option>
+            <option value="braun">braun</option>
+            <option value="holz">holz</option>
+          </select>
+        </label>
         <button class="add-to-cart" data-id="5" data-name="Schädel Deko" data-price="22.50">In den Warenkorb</button>
       </article>
 
@@ -72,6 +271,23 @@
         <h2>Fantasy Ring</h2>
         <p>Zauberer-Schmuck für Fantasy-Fans und Cosplayer.</p>
         <div class="price">€14,90</div>
+        <label class="color-field">Farbe:
+          <select class="product-color" aria-label="Farbe wählen">
+              <option value="marmour">marmour</option>
+              <option value="weiß">weiß</option>
+              <option value="schwarz">schwarz</option>
+            <option value="rot">rot</option>
+            <option value="rosa">rosa</option>
+            <option value="hellblau">hellblau</option>
+            <option value="dunkelblau">dunkelblau</option>
+            <option value="meeresblau">meeresblau</option>
+            <option value="magenta">magenta</option>
+            <option value="gold">gold</option>
+            <option value="tuerkis">türkis</option>
+            <option value="braun">braun</option>
+            <option value="holz">holz</option>
+          </select>
+        </label>
         <button class="add-to-cart" data-id="6" data-name="Fantasy Ring" data-price="14.90">In den Warenkorb</button>
       </article>
     </div>
@@ -79,8 +295,8 @@
 
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-brand">
-        <div class="logo">info3dSosus</div>
+        <div class="footer-brand">
+        <div class="logo">3dSosue</div>
         <p>3D-Modelle für Druck, Design und kreative Projekte.</p>
       </div>
       <div class="footer-links">
@@ -93,8 +309,11 @@
         <p><strong>Kontakt</strong></p>
         <p>kontakt@info3dsosus.de</p>
       </div>
+      <div class="socials">
+        <a href="https://instagram.com/3dSosue" target="_blank" rel="noopener">📸 Instagram @3dSosue</a>
+      </div>
     </div>
-    <p class="footer-note">© 2026 info3dSosus. Alle Rechte vorbehalten.</p>
+    <p class="footer-note">© 2026 3dSosue. Alle Rechte vorbehalten.</p>
   </footer>
 
   <script src="cart.js"></script>
